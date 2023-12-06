@@ -1,0 +1,1 @@
+export { MerchantPayForm } from "./_pay.form"

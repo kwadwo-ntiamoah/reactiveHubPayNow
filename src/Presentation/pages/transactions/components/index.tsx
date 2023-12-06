@@ -1,0 +1,1 @@
+export { TransactionsTable } from "./_transactions.table"
