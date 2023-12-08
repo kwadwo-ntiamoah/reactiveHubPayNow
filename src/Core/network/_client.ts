@@ -1,6 +1,6 @@
 import ApiResponse from "@/Data/model/api.model";
 import TokenModel from "@/Data/model/token.model";
-import { StorageService, StoreKeys } from "@/Domain/service/_storage.service";
+import { StorageService, StoreKeys } from "@/Domain/service";
 import axios, { AxiosError, AxiosResponse } from "axios";
 import { container, injectable } from "tsyringe";
 

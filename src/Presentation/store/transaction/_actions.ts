@@ -1,5 +1,5 @@
 import { GetAllTransactionsEntity } from "@/Domain/entity";
-import { TransactionService } from "@/Domain/service/_transaction.service";
+import { TransactionService } from "@/Domain/service";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { container } from "tsyringe";
 

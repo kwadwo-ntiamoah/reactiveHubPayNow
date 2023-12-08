@@ -1,4 +1,5 @@
-import { Button, Loader } from "../shared/components";
+import { Button } from "@/Presentation/common/styled-components";
+import { Loader } from "@/Presentation/common/shared"
 
 const App = () => {
   return (
