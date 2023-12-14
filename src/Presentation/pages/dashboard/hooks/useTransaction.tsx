@@ -1,7 +1,7 @@
 import { AppDispatch, RootState } from "@/Presentation/store";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { IPager } from "../data/pager";
+import { IPager } from "../../../../Data/global/pager";
 import { GetAllTransactionsEntity } from "@/Domain/entity";
 import { getAllTransactionsAsync } from "@/Presentation/store/transaction";
 import TransactionReponseModel, { TransactionModel } from "@/Data/model/transaction.model";

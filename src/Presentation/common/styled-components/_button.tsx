@@ -1,6 +1,6 @@
 import tw from 'tailwind-styled-components';
 
-type ButtonType = 'primary' | 'secondary' | 'outlined' | 'danger' | 'link'
+type ButtonType = 'primary' | 'secondary' | 'outlined' | 'danger' | 'link' | 'default'
 
 interface ButtonProps {
     $type?: ButtonType

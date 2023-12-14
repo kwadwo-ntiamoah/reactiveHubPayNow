@@ -1,4 +1,4 @@
-import type { StatusType } from "@/Data/model/transaction.model";
+import { getIcon } from "@/Data/global/getIcons";
 import { ITransactionProps } from "@/Presentation/common/data";
 import {
   Typography,
@@ -16,27 +16,10 @@ import {
   SvgButton,
   SvgButtonDiv,
 } from "@/Presentation/common/styled-components";
-import {
-  pendingIcon,
-  failedIcon,
-  unapprovedIcon,
-  successIcon,
-} from "@/assets/svgs";
 import Skeleton from "react-loading-skeleton";
 
 export const RecentTransactions = (props: ITransactionProps) => {
-  const getIcon = (status: StatusType) => {
-    switch (status) {
-      case "success":
-        return successIcon;
-      case "failed":
-        return failedIcon;
-      case "pending":
-        return pendingIcon;
-      default:
-        return unapprovedIcon;
-    }
-  };
+  
   return (
     <div className="flex flex-col">
       <div className="flex items-center justify-between">
