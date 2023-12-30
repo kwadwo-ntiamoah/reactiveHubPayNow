@@ -5,9 +5,16 @@ export enum ROUTE_CONSTANTS {
   // auth
   AUTH = "/auth",
 
+  // otp
+  OTP_VERIFY = "/otp/verify/:id",
+  OTP_VERIFIED = "/otp/verified",
+  OTP_INVALID = "/otp/invalid",
+
   // dashboard
   DASHBOARD = "/dashboard",
   PAYMENTS = "/dashboard/merch-pay",
+  PAYMENTS_SUCCESS = "/dashboard/merch-pay/success",
+  PAYMENTS_FAILED = "/dashboard/merch-pay/failed",
   SETTINGS = "/dashboard/settings",
   TRANSACTIONS = "/dashboard/transactions",
   MERCHANTS = "/dashboard/merchants",

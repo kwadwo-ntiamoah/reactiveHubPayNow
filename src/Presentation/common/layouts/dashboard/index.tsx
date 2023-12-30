@@ -2,6 +2,7 @@ import { Link, Outlet } from "react-router-dom";
 import { Container, Typography } from "@/Presentation/common/styled-components";
 import { ROUTE_CONSTANTS } from "@/Core/router/routes";
 import logo from "@/assets/images/logo.png";
+import diversity from "@/assets/images/diversity.png"
 import useDashboardLayout from "./hooks/useDashboardLayout";
 
 import { NavMenuItems } from "./components";
@@ -11,7 +12,7 @@ const DashboardLayout = () => {
   const { currentUser, activeNav, handleClick } = useDashboardLayout()
 
   return (
-    <div className="flex flex-col">
+    <div className="relative h-screen w-screen flex flex-col">
       <div className="flex flex-col sticky inset-0">
         <div className="bg-secondary-100 w-screen h-20">
           <Container>

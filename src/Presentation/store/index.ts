@@ -3,12 +3,14 @@ import { configureStore } from "@reduxjs/toolkit";
 import counterReducer from "./counter";
 import authReducer from "./auth"
 import transactionReducer from "./transaction"
+import merchantReducer from "./merchant"
 
 export const store = configureStore({
   reducer: {
     counter: counterReducer,
     auth: authReducer,
-    transaction: transactionReducer
+    transaction: transactionReducer,
+    merchant: merchantReducer
   },
 });
 

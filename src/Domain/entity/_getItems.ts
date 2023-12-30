@@ -1,4 +1,4 @@
-export class GetAllTransactionsEntity {
+export class GetAllItemsEntity {
     constructor(
         public page: string,
         public perPage: string,

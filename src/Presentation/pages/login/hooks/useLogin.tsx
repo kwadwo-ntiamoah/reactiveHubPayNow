@@ -4,6 +4,7 @@ import { LoginEntity } from "@/Domain/entity";
 import { StorageService, StoreKeys } from "@/Domain/service/_storage.service";
 import { AppDispatch, RootState } from "@/Presentation/store";
 import { loginAsync, authResetState } from "@/Presentation/store/auth";
+import { getMerchantAsync } from "@/Presentation/store/merchant";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -16,6 +17,7 @@ const useLogin = () => {
   const navigate = useNavigate()
 
   const authStore = useSelector((state: RootState) => state.auth);
+
   const { user, status, error } = authStore;
 
   useEffect(() => {
@@ -27,6 +29,9 @@ const useLogin = () => {
     if (user != null) {
       var token = TokenModel.fromJson(JSON.stringify(user!))
       storageService.setData(StoreKeys.TOKEN, token)
+
+      // get merchant details
+      dispatch(getMerchantAsync(token.user?.merchantId!))
 
       // navigate to dashboard
       navigate(ROUTE_CONSTANTS.DASHBOARD, { replace: true })

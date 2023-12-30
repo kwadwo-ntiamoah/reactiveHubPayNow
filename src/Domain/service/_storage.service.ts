@@ -10,7 +10,7 @@ export class StorageService {
     }
 
     getData = (key: string): string | null => {
-        return sessionStorage.getItem(key)
+        return sessionStorage.getItem(key!)
     }
 
     removeData = (key: string) => {
@@ -23,5 +23,6 @@ export class StorageService {
 }
 
 export const StoreKeys = {
-    TOKEN: "token"
+    TOKEN: "token",
+    MERCH: "merchant"
 }

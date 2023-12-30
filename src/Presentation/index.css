@@ -20,3 +20,26 @@
 body {
     @apply text-black overflow-x-hidden bg-gray-100 select-none;
 }
+
+.pmnt-card {
+  @apply flex w-full grow items-center justify-center py-5
+}
+
+.pmnt-card-active {
+  @apply border-x border-t bg-gray-50
+}
+
+.pmnt-card-inactive {
+  @apply border-b
+}
+
+.otp-input {
+  width: 4em !important;
+  height: 4em;
+
+  @apply border outline-none rounded-md font-bold lg:text-xl
+}
+
+.bullet {
+  @apply rounded-full p-1 bg-slate-500
+}

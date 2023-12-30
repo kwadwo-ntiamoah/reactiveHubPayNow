@@ -1,9 +1,15 @@
-import { AvailableBalance, PendingFailedTransactions, RecentTransactions } from "./components";
+import {
+  AvailableBalance,
+  PendingFailedTransactions,
+  RecentTransactions,
+} from "./components";
+import useDashboard from "./hooks/useDashboard";
 import useTransaction from "./hooks/useTransaction";
 
 const Dashboard = () => {
+  const { status, transactionsData } = useTransaction();
+  useDashboard();
 
-  const { status, transactionsData } = useTransaction()
   return (
     <div className="flex flex-col space-y-10">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-y-10 md:gap-y-0 md:gap-10">
@@ -19,9 +25,14 @@ const Dashboard = () => {
       </div>
 
       {/* recent transactions */}
-      <div className="bg-white p-10 rounded-md">
-        <RecentTransactions isLoading={status === "loading"} transactions={transactionsData!}/>
-      </div>
+      {transactionsData != null && (
+        <div className="bg-white p-10 rounded-md">
+          <RecentTransactions
+            isLoading={status === "loading"}
+            transactions={transactionsData!}
+          />
+        </div>
+      )}
     </div>
   );
 };

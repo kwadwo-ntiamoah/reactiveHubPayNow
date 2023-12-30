@@ -5,7 +5,7 @@ import axios, { AxiosError, AxiosResponse } from "axios";
 import { container, injectable } from "tsyringe";
 
 export interface IHttpClient {
-    get: (url: string, params: any) => Promise<ApiResponse>,
+    get: (url: string, params?: any) => Promise<ApiResponse>,
     post: (url: string, payload: any | null ) => Promise<ApiResponse>
 }
 

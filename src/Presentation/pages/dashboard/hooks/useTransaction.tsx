@@ -2,7 +2,7 @@ import { AppDispatch, RootState } from "@/Presentation/store";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { IPager } from "../../../../Data/global/pager";
-import { GetAllTransactionsEntity } from "@/Domain/entity";
+import { GetAllItemsEntity } from "@/Domain/entity";
 import { getAllTransactionsAsync } from "@/Presentation/store/transaction";
 import TransactionReponseModel, { TransactionModel } from "@/Data/model/transaction.model";
 
@@ -16,7 +16,7 @@ const useTransaction = () => {
   const [transactionsData, setTransactionsData] = useState<TransactionModel[]>()
 
   const getTransactions = async () => {
-    const payload = new GetAllTransactionsEntity(
+    const payload = new GetAllItemsEntity(
       pager.page.toString(),
       pager.pageSize.toString()
     );
