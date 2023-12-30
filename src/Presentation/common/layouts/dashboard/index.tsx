@@ -2,7 +2,6 @@ import { Link, Outlet } from "react-router-dom";
 import { Container, Typography } from "@/Presentation/common/styled-components";
 import { ROUTE_CONSTANTS } from "@/Core/router/routes";
 import logo from "@/assets/images/logo.png";
-import diversity from "@/assets/images/diversity.png"
 import useDashboardLayout from "./hooks/useDashboardLayout";
 
 import { NavMenuItems } from "./components";
