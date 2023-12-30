@@ -1,4 +1,4 @@
-import { loader } from "@/assets/svgs";
+import { loader, pageLoader } from "@/assets/svgs";
 
 export const Loader = () => {
   return (
@@ -10,3 +10,11 @@ export const Loader = () => {
     </div>
   );
 };
+
+export const PageLoader = () => {
+  return (
+    <div className="absolute h-screen w-screen flex items-center justify-center">
+      <img src={pageLoader} alt="loader" className="h-32 w-auto p-0" />
+    </div>
+  )
+}

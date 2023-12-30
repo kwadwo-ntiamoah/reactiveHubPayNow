@@ -11,13 +11,14 @@ import { store } from "./Presentation/store";
 
 import "./Presentation/index.css";
 import 'react-loading-skeleton/dist/skeleton.css'
+import { PageLoader } from "./Presentation/common/shared";
 
 // register container
 ServiceLocator.init()
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <React.Suspense>
+    <React.Suspense fallback={<PageLoader />}>
       <Provider store={store}>
       <RouterProvider router={router} />
       </Provider>

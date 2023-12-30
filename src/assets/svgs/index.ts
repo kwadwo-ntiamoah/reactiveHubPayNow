@@ -5,6 +5,7 @@ import unapprovedIcon from "./_unapproved.svg"
 import chevronRight from "./_chevron_right.svg"
 import chevronLeft from "./_chevron_left.svg"
 import loader from "./_loader.svg";
+import pageLoader from "./_pageLoader.svg"
 
 export {
   failedIcon,
@@ -13,5 +14,6 @@ export {
   unapprovedIcon,
   chevronLeft, 
   chevronRight,
-  loader
+  loader,
+  pageLoader
 };
