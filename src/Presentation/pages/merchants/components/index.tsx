@@ -1,0 +1,1 @@
+export { MerchantsTable } from "./_merchants.table"

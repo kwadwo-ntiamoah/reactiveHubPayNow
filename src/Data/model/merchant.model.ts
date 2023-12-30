@@ -1,6 +1,6 @@
 class MerchantReponseModel {
     constructor(
-        public transactions: MerchantModel[],
+        public merchants: MerchantModel[],
         public totalRecords: string
     ) {}
 
@@ -21,7 +21,8 @@ export class MerchantModel {
     public qrCodeUrl: string | null,
     public firstName: string,
     public lastName: string,
-    public email: string
+    public email: string,
+    public phone: string
   ) {}
 
   static fromJson(json: any): MerchantModel {
@@ -34,7 +35,8 @@ export class MerchantModel {
       json["qr_code_url"],
       json["first_name"],
       json["last_name"],
-      json["email"]
+      json["email"],
+      json["phone"]
     );
   }
 
