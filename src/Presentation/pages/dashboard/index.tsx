@@ -5,6 +5,8 @@ import {
 } from "./components";
 import useDashboard from "./hooks/useDashboard";
 import useTransaction from "./hooks/useTransaction";
+import { pageLoader } from "@/assets/svgs";
+import { Typography } from "@/Presentation/common/styled-components";
 
 const Dashboard = () => {
   const { status, transactionsData } = useTransaction();
@@ -25,7 +27,12 @@ const Dashboard = () => {
       </div>
 
       {/* recent transactions */}
-      {transactionsData != null && (
+      {transactionsData == null ? (
+        <div className="flex flex-col items-center justify-center">
+          <img src={pageLoader} alt="pageLoader" className="h-24 w-auto" />
+          <Typography>Please wait...</Typography>
+        </div>
+      ) : (
         <div className="bg-white p-10 rounded-md">
           <RecentTransactions
             isLoading={status === "loading"}

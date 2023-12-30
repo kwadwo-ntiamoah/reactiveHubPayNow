@@ -63,6 +63,10 @@ const router = createBrowserRouter([
         path: ROUTE_CONSTANTS.AUTH,
         element: <Login />,
       },
+      {
+        path: ROUTE_CONSTANTS.ADMIN_AUTH,
+        element: <Login />
+      }
     ],
   },
 

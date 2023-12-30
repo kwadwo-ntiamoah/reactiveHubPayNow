@@ -1,6 +1,13 @@
 import { ROUTE_CONSTANTS } from "@/Core/router/routes";
 import { Fragment } from "react";
-import { menuIcon, transactionsIcon, payIcon, settingsIcon, merchantIcon, usersIcon } from "@/assets/icons";
+import {
+  menuIcon,
+  transactionsIcon,
+  payIcon,
+  settingsIcon,
+  merchantIcon,
+  usersIcon,
+} from "@/assets/icons";
 import {
   Container,
   NavIcon,
@@ -10,16 +17,17 @@ import {
 } from "@/Presentation/common/styled-components";
 
 interface INavMenuItemsProps {
-  activeNav: string
-  handleClick: (route: ROUTE_CONSTANTS) => void
+  isAdmin: boolean;
+  activeNav: string;
+  handleClick: (route: ROUTE_CONSTANTS) => void;
 }
 
 export const NavMenuItems = (props: INavMenuItemsProps) => {
-  const { activeNav, handleClick } = props
+  const { activeNav, handleClick } = props;
 
   return (
     <Fragment>
-      <Container >
+      <Container>
         <div className="md:px-36 flex items-center justify-start space-x-10 flex-shrink-0 overflow-x-auto no-scrollbar">
           {/* dashboard */}
           <NavMenuWrapper
@@ -65,27 +73,31 @@ export const NavMenuItems = (props: INavMenuItemsProps) => {
             </NavMenu>
           </NavMenuWrapper>
 
-          {/* merchants */}
-          <NavMenuWrapper
-            $active={activeNav == ROUTE_CONSTANTS.MERCHANTS}
-            onClick={() => handleClick(ROUTE_CONSTANTS.MERCHANTS)}
-          >
-            <NavMenu>
-              <NavIcon src={merchantIcon} />
-              <Typography>Merchants</Typography>
-            </NavMenu>
-          </NavMenuWrapper>
+          {props.isAdmin && (
+            <Fragment>
+              {/* merchants */}
+              <NavMenuWrapper
+                $active={activeNav == ROUTE_CONSTANTS.MERCHANTS}
+                onClick={() => handleClick(ROUTE_CONSTANTS.MERCHANTS)}
+              >
+                <NavMenu>
+                  <NavIcon src={merchantIcon} />
+                  <Typography>Merchants</Typography>
+                </NavMenu>
+              </NavMenuWrapper>
 
-          {/* users */}
-          <NavMenuWrapper
-            $active={activeNav == ROUTE_CONSTANTS.USERS}
-            onClick={() => handleClick(ROUTE_CONSTANTS.USERS)}
-          >
-            <NavMenu>
-              <NavIcon src={usersIcon} />
-              <Typography>Users</Typography>
-            </NavMenu>
-          </NavMenuWrapper>
+              {/* users */}
+              <NavMenuWrapper
+                $active={activeNav == ROUTE_CONSTANTS.USERS}
+                onClick={() => handleClick(ROUTE_CONSTANTS.USERS)}
+              >
+                <NavMenu>
+                  <NavIcon src={usersIcon} />
+                  <Typography>Users</Typography>
+                </NavMenu>
+              </NavMenuWrapper>
+            </Fragment>
+          )}
         </div>
       </Container>
     </Fragment>

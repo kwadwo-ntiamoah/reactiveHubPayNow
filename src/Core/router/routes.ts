@@ -4,6 +4,7 @@ export enum ROUTE_CONSTANTS {
 
   // auth
   AUTH = "/auth",
+  ADMIN_AUTH = "/auth/admin",
 
   // otp
   OTP_VERIFY = "/otp/verify/:id",

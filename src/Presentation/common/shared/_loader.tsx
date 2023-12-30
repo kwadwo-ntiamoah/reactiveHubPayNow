@@ -13,7 +13,7 @@ export const Loader = () => {
 
 export const PageLoader = () => {
   return (
-    <div className="absolute h-screen w-screen flex items-center justify-center">
+    <div className="absolute top-0 h-screen w-screen flex items-center justify-center">
       <img src={pageLoader} alt="loader" className="h-32 w-auto p-0" />
     </div>
   )

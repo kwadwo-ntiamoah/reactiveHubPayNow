@@ -8,7 +8,7 @@ import { NavMenuItems } from "./components";
 
 const DashboardLayout = () => {
 
-  const { currentUser, activeNav, handleClick } = useDashboardLayout()
+  const { currentUser, activeNav, isAdmin, handleClick } = useDashboardLayout()
 
   return (
     <div className="relative h-screen w-screen flex flex-col">
@@ -30,7 +30,7 @@ const DashboardLayout = () => {
           </Container>
         </div>
         <div className="bg-white flex justify-start w-screen h-12 border-b md:px-36">
-          <NavMenuItems activeNav={activeNav} handleClick={handleClick} />
+          <NavMenuItems isAdmin={isAdmin} activeNav={activeNav} handleClick={handleClick} />
         </div>
       </div>
 

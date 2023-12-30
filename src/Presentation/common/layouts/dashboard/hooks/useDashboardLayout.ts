@@ -11,6 +11,7 @@ const useDashboardLayout = () => {
 
   const [activeNav, setActiveNav] = useState(location.pathname);
   const [currentUser, setCurrentUser] = useState("")
+  const [isAdmin, setIsAdmin] = useState(false)
 
   const storageService = container.resolve(StorageService)
   var storeToken = storageService.getData(StoreKeys.TOKEN)
@@ -23,6 +24,7 @@ const useDashboardLayout = () => {
     if (storeToken != null) {
       var user = TokenModel.fromJson(storeToken)
       setCurrentUser(user.user?.firstName!)
+      setIsAdmin(user.user?.adminId != null)
     }
   }, [])
 
@@ -31,7 +33,7 @@ const useDashboardLayout = () => {
     storeToken == null && navigate(ROUTE_CONSTANTS.AUTH, { replace: true })
   }, [location.pathname]);
 
-  return { currentUser, activeNav, handleClick };
+  return { currentUser, activeNav, isAdmin, handleClick };
 };
 
 export default useDashboardLayout;

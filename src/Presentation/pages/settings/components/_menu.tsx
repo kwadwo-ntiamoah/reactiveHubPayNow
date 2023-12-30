@@ -11,9 +11,8 @@ export const Menu = () => {
           </Typography>
 
           <div className="flex flex-col space-y-2">
-            {
-                [1, 2].map(() => <_MenuCard />)
-            }
+            <_MenuCard label="Change Password"/>
+            <_MenuCard label="Request Info Change"/>
           </div>
         </div>
         </RoundedWhiteDiv>
@@ -21,13 +20,13 @@ export const Menu = () => {
   );
 };
 
-const _MenuCard = () => {
+const _MenuCard = (props: { label: string }) => {
   return (
     <div className="flex items-center justify-between py-4 md:px-5 rounded-md cursor-pointer hover:bg-gray-100">
       <div className="flex space-x-4">
         <Icon src={passwordIcon} />
 
-        <Typography>Change Password</Typography>
+        <Typography>{props.label}</Typography>
       </div>
       <IconSmall src={chevronRight} />
     </div>

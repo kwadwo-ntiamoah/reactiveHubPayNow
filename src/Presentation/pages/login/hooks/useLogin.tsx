@@ -7,7 +7,7 @@ import { loginAsync, authResetState } from "@/Presentation/store/auth";
 import { getMerchantAsync } from "@/Presentation/store/merchant";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { container } from "tsyringe";
 
 const useLogin = () => {
@@ -17,6 +17,8 @@ const useLogin = () => {
   const navigate = useNavigate()
 
   const authStore = useSelector((state: RootState) => state.auth);
+  const location = useLocation()
+  const currentRoute = location.pathname
 
   const { user, status, error } = authStore;
 
@@ -48,7 +50,7 @@ const useLogin = () => {
     const payload = new LoginEntity(
       formUser.email,
       formUser.password,
-      "merchant"
+      currentRoute.includes("/admin") ? "admin" : "merchant"
     );
 
     dispatch(loginAsync(payload));
