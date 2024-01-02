@@ -52,7 +52,9 @@ export const NavMenuItems = (props: INavMenuItemsProps) => {
           </NavMenuWrapper>
 
           {/* payments */}
-          <NavMenuWrapper
+          {
+            !props.isAdmin && (
+              <NavMenuWrapper
             $active={activeNav == ROUTE_CONSTANTS.PAYMENTS}
             onClick={() => handleClick(ROUTE_CONSTANTS.PAYMENTS)}
           >
@@ -61,6 +63,8 @@ export const NavMenuItems = (props: INavMenuItemsProps) => {
               <Typography>Payments</Typography>
             </NavMenu>
           </NavMenuWrapper>
+            )
+          }
 
           {/* settings */}
           <NavMenuWrapper
