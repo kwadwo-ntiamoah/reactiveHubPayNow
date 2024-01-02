@@ -11,8 +11,6 @@ import {
   TableIcon,
   TableDataFlexCol,
   Typography,
-  SvgButtonDiv,
-  SvgButton,
   TableFooter,
   Input,
   Button,
